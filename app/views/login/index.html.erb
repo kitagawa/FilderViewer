@@ -1,0 +1,19 @@
+<%@document_title = 'ログイン'%>
+<%=flash_error_message%>
+
+<%=form_tag :action => "login", :method => :post do%>
+<table class="login">
+	<tr>
+		<th><%=attr_name(:user, :address)%>:</th>
+		<td><%=text_field_tag :address, "",{:size =>35}%></td>
+	</tr>
+	<tr>
+		<th><%=attr_name(:user, :password)%>:</th>
+		<td><%=password_field_tag :password, "",{:size =>35}%></td>
+	</tr>
+	<tr>
+		<td><%=link_to 'ユーザー登録', new_user_path%></td>
+		<td class="submit"><%=submit_tag 'ログイン'%></td>
+	</tr>
+</table>
+<%end%>

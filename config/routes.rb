@@ -1,4 +1,14 @@
+# -*- encoding : utf-8 -*-
 FilderViewer::Application.routes.draw do
+  root :to => 'login#index'
+  
+  resources :users
+  resources :login do
+    collection do
+      put "login"
+      get "logout"
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

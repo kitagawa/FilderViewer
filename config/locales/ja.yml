@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+   models:
+     user: ユーザー
+
+   attributes:
+     user:
+       address: アドレス
+       name: ユーザー名
+       password: パスワード
+       password_confirmation: パスワード(確認)
+
+   errors:
+      messages:
+        inclusion: "は一覧にありません。"
+        exclusion: "は予約されています。"
+        invalid: "が不正な値です。"
+        confirmation: "が一致しません。"
+        accepted: "を受諾してください。"
+        empty: "を入力してください。"
+        blank: "を入力してください。"
+        too_long: "は%{count}文字以内で入力してください。"
+        too_short: "は%{count}文字以上で入力してください。"
+        wrong_length: "は%{count}文字で入力してください。"
+        taken: "はすでに存在します。"
+        not_a_number: "は数値で入力してください。"
+        greater_than: "は%{count}より大きい値にしてください。"
+        greater_than_or_equal_to: "は%{count}以上の値にしてください。"
+        equal_to: "は%{count}にしてください。"
+        less_than: "は%{count}より小さい値にしてください。"
+        less_than_or_equal_to: "は%{count}以下の値にしてください。"
+        odd: "は奇数にしてください。"
+        even: "は偶数にしてください。"
