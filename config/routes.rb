@@ -5,10 +5,11 @@ FilderViewer::Application.routes.draw do
   resources :users
   resources :login do
     collection do
-      put "login"
+      post "login"
       get "logout"
     end
   end
+  resources :canvas
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

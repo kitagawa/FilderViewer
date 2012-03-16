@@ -1,11 +1,12 @@
 <%@document_title = 'ログイン'%>
 <%=flash_error_message%>
+<%=flash[:notice]%>
 
 <%=form_tag :action => "login", :method => :post do%>
 <table class="login">
 	<tr>
-		<th><%=attr_name(:user, :address)%>:</th>
-		<td><%=text_field_tag :address, "",{:size =>35}%></td>
+		<th><%=attr_name(:user, :name)%>:</th>
+		<td><%=text_field_tag :name, "",{:size =>35}%></td>
 	</tr>
 	<tr>
 		<th><%=attr_name(:user, :password)%>:</th>

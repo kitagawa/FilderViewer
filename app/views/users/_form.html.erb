@@ -1,17 +1,24 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+	<%=render :partial => "shared/error_messages", :locals=>{:object => @user}%>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table>
+	<tr>
+		<th><%= attr_name(:user, :name) %>:</th>
+		<td><%= f.text_field :name %></td>
+	</tr>
+	<tr>
+		<th><%= attr_name(:user, :password) %>:</th>
+		<td><%= f.password_field :password %></td>
+	</tr>
+	<tr>
+		<th><%= attr_name(:user, :password_confirmation) %>:</th>
+		<td><%= f.password_field :password_confirmation%></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="submit">
+			<%= f.submit "登録", :class=> "submit"%>
+		</td>
+	</tr>
+</table>
 <% end %>

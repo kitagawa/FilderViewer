@@ -32,17 +32,5 @@ describe "routing" do
     end
   end
   
-  describe LoginController do
-    it "routes to #index" do
-      get("/login").should route_to("login#index")
-    end
-    
-    it "routes to #login" do
-      put("/login/login").should route_to("login#login")
-    end
-    
-    it "routes to #logout" do
-      get("/login/logout").should route_to("login#logout")
-    end
-  end
+
 end
