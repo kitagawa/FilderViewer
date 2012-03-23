@@ -1,3 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+class @Canvas
+  constructor: (@data) ->
+    @canvas= document.getElementById("main")
+    @context= @canvas.getContext("2d")
+ 
+  draw: ()->
+    data = @data
+    for class_name of data
+      for i of data[class_name]
+        eval(class_name + ".parse_json(data[class_name][i]).draw()");
+
+  draw_background: ()->
+    @context.fillStyle="black"
+    @context.rect(0,0,@canvas.width,@canvas.height);
+    @context.fill();
