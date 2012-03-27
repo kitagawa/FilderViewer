@@ -7,3 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function parse_json(data){
+	data = data.split(/&quot;/).join('"');
+	var json = JSON.parse(data);
+	return json
+}

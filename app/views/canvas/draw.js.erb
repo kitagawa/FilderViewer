@@ -1,7 +1,4 @@
 var data = '<%=escape_javascript(@json)%>';
-data = data.split(/&quot;/).join('"');
-var obj = JSON.parse(data);
-
+var obj = parse_json(data)
 canvas = new Canvas(obj);
-canvas.draw_background();
 canvas.draw();

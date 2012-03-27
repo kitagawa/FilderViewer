@@ -1,0 +1,11 @@
+<div class="navbar navbar-inner">
+    <div class="container">
+      <ul class="nav">
+		  <%=li_with_active(canvas_path) do%>
+		  	<%=link_to "Drawing", canvas_path%><%end%>
+		  <li class="divider-vertical"></li>
+		  <%=li_with_active(resources_path) do%>
+		  	<%=link_to "List",resources_path %><%end%>
+		</ul>
+    </div>
+</div>

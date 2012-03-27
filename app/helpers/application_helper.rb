@@ -22,4 +22,7 @@ module ApplicationHelper
     content_tag(:span,'*',{:class => "required"})
   end
  
+ def li_with_active(path, &block)
+   content_tag(:li, {:class => path == request.path ? "active" : ""},&block)
+ end
 end

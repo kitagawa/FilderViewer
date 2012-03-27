@@ -1,6 +1,13 @@
 class CanvasController < ApplicationController
   def index
-    @json = File.open("tmp/test.json","r").read
+    if params[:path]
+      begin
+        file = File.open(params[:path],"r")
+        @json = file.read if file
+      rescue
+        flash[:message] = "File not found!"
+      end
+    end
   end
   def draw
     @json = File.open("tmp/test.json","r").read

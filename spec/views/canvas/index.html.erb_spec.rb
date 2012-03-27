@@ -5,4 +5,11 @@ describe "canvas/index.html.erb" do
     render
     rendered.should have_selector("canvas#main")
   end
+  
+  it "show error message" do
+    flash[:message] = "alert"
+    render
+    rendered.should have_selector("div.alert")
+    rendered.should =~ /alert/
+  end
 end

@@ -14,7 +14,7 @@ FilderViewer::Application.routes.draw do
       get "draw"
     end
   end
-  
+  resources :resources
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

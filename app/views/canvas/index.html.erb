@@ -1,5 +1,23 @@
+<%if flash[:message]%>
+	<div class="alert alert-error fade in">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+		<trong><%=flash[:message]%></strong>	
+	</div>
+<%end%>
+
 <canvas id="main" width="500", height="500">
+	<script>
+		Canvas.draw_background();
+	</script>
+	<%if @json%>
+		<script>
+			new Canvas(parse_json('<%=escape_javascript(@json)%>')).draw();
+		</script>
+	<%end%>
 </canvas>
+
 <div>
 	<%=link_to "Draw", draw_canvas_path, :remote=> true%>
 </div>
+
+

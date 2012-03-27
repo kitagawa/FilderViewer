@@ -3,6 +3,8 @@
 <%=flash[:notice]%>
 
 <%=form_tag :action => "login", :method => :post do%>
+<div class="hero-unit" width="500px">
+	<h2>FilderViewer</h2>
 <table class="login">
 	<tr>
 		<th><%=attr_name(:user, :name)%>:</th>
@@ -14,7 +16,8 @@
 	</tr>
 	<tr>
 		<td><%=link_to 'ユーザー登録', new_user_path%></td>
-		<td class="submit"><%=submit_tag 'ログイン'%></td>
+		<td class="submit"><%=submit_tag 'ログイン', :class =>'btn btn-primary'%></td>
 	</tr>
 </table>
 <%end%>
+</div>
