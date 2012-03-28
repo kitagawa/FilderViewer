@@ -1,0 +1,18 @@
+<%=render :partial => "shared/simple_error_message"%>
+<div class="hero-unit">
+  <table>
+  	<tr>
+		<td><h1>File Upload</h1></td>
+		<td>
+			<%=form_tag '/resources', :multipart => true do%>
+			<div style="margin-left: 20px">
+			  <%=file_field_tag "path", :accept => "application/json"%>
+			  <p>
+			  	<%=submit_tag "アップロード", :class => "btn btn-primary btn-large"%>
+			  </p>				
+			</div>
+			<%end%>
+		</td>
+  	</tr>
+  </table>
+</div>

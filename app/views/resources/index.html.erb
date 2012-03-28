@@ -1,3 +1,17 @@
-<%@files.each do |file|%>
-	<%=file%>
+<%=render :partial=>"shared/simple_notice_message"%>
+
+<div style="float: right">
+<%=link_to new_resource_path, {:class => "btn btn-success"} do%>
+	<i class ="icon-plus icon-white"></i>
+	ファイル追加
 <%end%>
+</div>
+
+<table class="table table-striped">
+<%@files.each do |file|%>
+	<tr>
+		<td><%=file%></td>
+	</tr>
+<%end%>
+	
+</table>

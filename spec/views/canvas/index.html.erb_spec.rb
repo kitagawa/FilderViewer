@@ -12,4 +12,5 @@ describe "canvas/index.html.erb" do
     rendered.should have_selector("div.alert")
     rendered.should =~ /alert/
   end
+
 end
