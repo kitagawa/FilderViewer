@@ -16,7 +16,7 @@ describe LoginController do
     it "ログイン成功" do
       @user = Factory.create(:user)
       put :login, {:name => @user.name, :password => @user.password}
-      response.should redirect_to(canvas_path)
+      response.should redirect_to("/")
     end
     it "ログイン失敗" do
       put :login, {}

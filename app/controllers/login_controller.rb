@@ -11,7 +11,7 @@ class LoginController < ApplicationController
     user = User.authenticate(params[:name], params[:password])
     if user
       session[:user] = user.name
-      redirect_to canvas_path
+      redirect_to "/"
     else
       flash.now[:message] = "アドレスまたはパスワードが間違っています。"
       render :action => "index"

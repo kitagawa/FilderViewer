@@ -1,11 +1,13 @@
+<div class="navbar navbar-fixed-top">
 <div class="navbar navbar-inner">
     <div class="container">
       <ul class="nav">
-		  <%=li_with_active(canvas_path) do%>
-		  	<%=link_to "Drawing", canvas_path%><%end%>
-		  <li class="divider-vertical"></li>
 		  <%=li_with_active(resources_path) do%>
-		  	<%=link_to "List",resources_path %><%end%>
+			  <%=link_to resources_path do%>
+					<i class ="icon-list icon-white"></i>
+					List
+				<%end%>
+		  <%end%>
 		</ul>
 		<ul class="nav pull-right">
 			<li class="dropdown">
@@ -20,4 +22,5 @@
 			</li>
 		</ul>
     </div>
+</div>
 </div>

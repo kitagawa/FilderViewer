@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 FilderViewer::Application.routes.draw do
-  root :to => 'canvas#index'
+  root :to => 'resources#index'
   
   resources :users
   resources :login do

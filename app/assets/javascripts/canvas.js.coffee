@@ -11,5 +11,7 @@ class @Canvas
     @canvas = document.getElementById("main")
     @context = @canvas.getContext("2d")
     @context.fillStyle="black"
+    @context.strokeStyle="gray"
     @context.rect(0,0,@canvas.width,@canvas.height);
     @context.fill();
+    @context.stroke();

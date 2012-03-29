@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
+  skip_before_filter :block_unsigned_user
   # GET /users/new
   # GET /users/new.json
   def new
