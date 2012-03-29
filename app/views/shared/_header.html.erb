@@ -7,5 +7,17 @@
 		  <%=li_with_active(resources_path) do%>
 		  	<%=link_to "List",resources_path %><%end%>
 		</ul>
+		<ul class="nav pull-right">
+			<li class="dropdown">
+				  <a class="dropdown-toggle btn-large" data-toggle="dropdown" href="#">
+				    <i class="icon-user icon-white"></i>
+				    <%=session[:user]%>
+				    <b class="caret"></b>
+				  </a>
+				  <ul class="dropdown-menu">
+				  	<li><%=link_to "ログアウト", logout_login_index_path%></li>
+				  </ul>
+			</li>
+		</ul>
     </div>
 </div>

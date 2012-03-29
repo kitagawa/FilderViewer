@@ -10,9 +10,6 @@ describe LoginController do
     it "render successfully" do
       response.should be_success
     end
-    it "reset user session" do
-      session[:user].should == nil
-    end
   end
   
   describe "PUT login" do
@@ -24,6 +21,14 @@ describe LoginController do
     it "ログイン失敗" do
       put :login, {}
       response.should render_template("index")
+    end
+  end
+  
+  describe "logout" do
+    it "logout successfully" do
+      get :logout
+      session[:user].should be_nil
+      response.should redirect_to login_index_path
     end
   end
 end

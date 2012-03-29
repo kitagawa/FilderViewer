@@ -1,11 +1,9 @@
 # -*- encoding : utf-8 -*-
 class LoginController < ApplicationController
-  #skip_before_filter :block_non_user
-  
+  skip_before_filter :block_unsigned_user
+
   #ログイン画面
   def index
-    #初期化
-    session[:user] = nil
   end
   
   #ログイン
@@ -22,7 +20,7 @@ class LoginController < ApplicationController
   
   #ログアウト
   def logout
-    session[:user] = nil
-    redirect_to resources_path
+    reset_session
+    redirect_to login_index_path
   end
 end

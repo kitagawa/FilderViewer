@@ -2,6 +2,7 @@
 require 'spec_helper'
 
 describe "Resource" do
+
   describe "index" do
     before do 
       visit resources_path
@@ -29,6 +30,7 @@ describe "Resource" do
       attach_file 'path', "./spec/fixtures/#{FILENAME}"
       click_button "アップロード"
       current_path.should == resources_path
+      delete_file
     end
   end
 end

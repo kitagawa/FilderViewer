@@ -7,7 +7,6 @@ class CanvasController < ApplicationController
         file.close
       rescue
         flash[:message] = "File not found!"
-        file.close
       end
     end
   end
