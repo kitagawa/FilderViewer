@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ResourcesHelper. For example:
-#
-# describe ResourcesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe ResourcesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "get filename" do
+    it "get filename successfully" do
+      get_filename("./tmp/test.json").should == "test.json"
+    end
+    it "get filename from short path" do
+      get_filename("test.json").should == "test.json"      
+    end
+    it "get nil from brank" do
+      get_filename("").should == nil            
+    end
+  end
 end
