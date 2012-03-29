@@ -4,8 +4,10 @@ class CanvasController < ApplicationController
       begin
         file = File.open(params[:path],"r")
         @json = file.read if file
+        file.close
       rescue
         flash[:message] = "File not found!"
+        file.close
       end
     end
   end

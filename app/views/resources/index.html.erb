@@ -10,7 +10,7 @@
 <table class="table table-striped">
 <%@files.each do |file|%>
 	<tr>
-		<td><%=get_filename(file)%></td>
+		<td><%=link_to get_filename(file), canvas_path(:path =>file)%></td>
 	</tr>
 <%end%>
 	

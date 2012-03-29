@@ -11,6 +11,14 @@ describe "Resource" do
       click_link_or_button "ファイル追加"
       current_path.should == new_resource_path
     end
+    
+    it "redirect to canvas" do
+      upload_file
+      visit resources_path
+      click_link FILENAME
+      current_path.should == canvas_path
+      delete_file
+    end
   end
   
   describe "create" do
@@ -18,7 +26,7 @@ describe "Resource" do
       visit new_resource_path
     end
     it "upload successfuly" do
-      attach_file 'path', './spec/fixtures/rspec_test.json'
+      attach_file 'path', "./spec/fixtures/#{FILENAME}"
       click_button "アップロード"
       current_path.should == resources_path
     end

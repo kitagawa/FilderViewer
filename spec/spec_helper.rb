@@ -32,4 +32,20 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+  
+end
+
+FILENAME = "rspec_test.json"
+
+def upload_file
+  path = fixture_file_upload("/#{FILENAME}",'application/json')
+  file = File.open(path)
+  io = File.open("./tmp/#{FILENAME}","w")
+  io.write(file.read)
+  io.close
+  file.close
+end
+
+def delete_file
+  File.delete("tmp/#{FILENAME}")
 end
