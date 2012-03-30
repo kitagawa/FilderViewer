@@ -37,7 +37,7 @@ describe "Users" do
     end
     
     it "canncel" do
-      click_link "戻る"
+      click_link "キャンセル"
       current_path.should == login_index_path
     end
   end

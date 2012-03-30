@@ -11,7 +11,7 @@ describe "Login" do
       fill_in "name", :with => @user.name
       fill_in "password", :with => @user.password
       click_button "ログイン"
-      current_path.should == canvas_path
+      current_path.should == '/'
     end
     
     it "fail login" do

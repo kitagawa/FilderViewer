@@ -32,5 +32,10 @@ describe "Resource" do
       current_path.should == resources_path
       delete_file
     end
+    
+    it "chancel" do
+      click_link "キャンセル"
+      current_path.should == resources_path
+    end
   end
 end

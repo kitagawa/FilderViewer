@@ -621,7 +621,7 @@ select,
   width: 210px;
   height: 18px;
   padding: 4px;
-  margin-bottom: 9px;
+  margin-bottom: 2px;
   font-size: 13px;
   line-height: 18px;
   color: #555555;
@@ -2870,7 +2870,8 @@ input[type="submit"].btn.btn-mini {
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
-  color: #ffffff;
+  color: #2e2e2e;
+  text-shadow:1px 1px 0px #666666;
 }
 .navbar .navbar-text {
   margin-bottom: 0;
@@ -3966,17 +3967,31 @@ a.thumbnail:hover {
 }
 .hero-unit h1 {
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 40px;  
   line-height: 1;
-  color: inherit;
+  color: #4f4e4f;
   letter-spacing: -1px;
 }
+.hero-unit h2 {
+  margin-bottom: 0;
+  font-size: 23px;  
+  line-height: 1;
+  color: #4f4e4f;
+  letter-spacing: -1px;
+}
+
 .hero-unit p {
   font-size: 18px;
   font-weight: 200;
   line-height: 27px;
   color: inherit;
 }
+
+.hero-unit .title{
+  margin-bottom: 35px;
+  text-shadow:2px 2px 0px #ffffff;
+}
+
 .pull-right {
   float: right;
 }

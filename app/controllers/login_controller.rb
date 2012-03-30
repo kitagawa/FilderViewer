@@ -15,6 +15,7 @@ class LoginController < ApplicationController
       redirect_to "/"
     else
       flash.now[:message] = "アドレスまたはパスワードが間違っています。"
+      @without_menu = true
       render :action => "index"
     end
   end

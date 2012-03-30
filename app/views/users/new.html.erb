@@ -1,5 +1,10 @@
 <%@document_title = "ユーザー登録"%>
+	<div class="hero-unit box" style="width: 320px">
+		<div class="title">
+			<h1>FilderViewer</h1>
+			<h2>ユーザー登録</h2>
+		</div>
+		<%=render :partial => "shared/error_messages", :locals=>{:object => @user}%>
+		<%= render 'form' %>
+	</div>
 
-<%= render 'form' %>
-
-<%= link_to '戻る', login_index_path %>

@@ -1,23 +1,23 @@
 <%@document_title = 'ログイン'%>
-<%=flash_error_message%>
-<%=flash[:notice]%>
+<%=render :partial=>"shared/simple_notice_message"%>
 
-<%=form_tag :action => "login", :method => :post do%>
-<div class="hero-unit" width="500px">
-	<h2>FilderViewer</h2>
-<table class="login">
-	<tr>
-		<th><%=attr_name(:user, :name)%>:</th>
-		<td><%=text_field_tag :name, "",{:size =>35}%></td>
-	</tr>
-	<tr>
-		<th><%=attr_name(:user, :password)%>:</th>
-		<td><%=password_field_tag :password, "",{:size =>35}%></td>
-	</tr>
-	<tr>
-		<td><%=link_to 'ユーザー登録', new_user_path%></td>
-		<td class="submit"><%=submit_tag 'ログイン', :class =>'btn btn-primary'%></td>
-	</tr>
-</table>
+<%=form_tag :action => "login", :method => :post, :class=>"well" do%>
+<div class="hero-unit box" style="width: 320px">
+	<div class="title">
+		<h1>FilderViewer</h1>		
+	</div>
+	<%=render :partial=>"shared/simple_error_message"%>
+	<div class="form box">
+		<label><%=attr_name(:user, :name)%></label>
+		<%=text_field_tag :name, "",{:size =>35}%>
+		<label><%=attr_name(:user, :password)%></label>
+		<%=password_field_tag :password, "",{:size =>35}%>
+		<p class="submit">
+			<%=submit_tag 'ログイン', :class =>'btn btn-large btn-primary'%>
+		</p>
+		<span class="pull-right">		
+			<%=link_to 'ユーザー登録≫', new_user_path, {:class => 'btn'}%>
+		</span>
+	</div>
 <%end%>
 </div>

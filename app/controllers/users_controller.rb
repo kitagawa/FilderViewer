@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
+    @without_menu = true
     respond_to do |format|
       if @user.save
         format.html { redirect_to login_index_path, notice: 'ユーザーを作成しました。' }
