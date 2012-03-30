@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
+    @without_menu = true
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }

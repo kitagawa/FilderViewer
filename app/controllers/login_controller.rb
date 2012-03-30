@@ -4,6 +4,7 @@ class LoginController < ApplicationController
 
   #ログイン画面
   def index
+    @without_menu = true
   end
   
   #ログイン
