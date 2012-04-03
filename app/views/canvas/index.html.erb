@@ -1,8 +1,9 @@
 <%=render :partial => "shared/simple_error_message"%>
-	<div id= "canvas_container" class="box" style="width: 500px">
-	<canvas id="main" class="box" width="500px" height="500px">
+<%@without_container = true%>
+<div id= "canvas_container" class="box">
+	<canvas id="main">
 		<script>
-			Canvas.draw_background();
+			new Background(500,500).draw();
 		</script>
 		<%if @json%>
 			<script>

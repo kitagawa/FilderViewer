@@ -1,12 +1,33 @@
 class @Parts
   constructor: ->
-    @context = document.getElementById("main").getContext("2d");
+    @canvas = document.getElementById("main")
+    @context = @canvas.getContext("2d");
     @context.strokeStyle = "lime"
   
   @parse_json: (object)-> new Parts()
   
   draw: -> 
 
+class @Background extends Parts
+  constructor: (@width,@height) ->
+    super()
+    
+  @parse_json: (object) ->
+    new Background(object.width, object.height)
+    
+  draw: ->
+    @resize_canvas();
+    @context.fillStyle="black"
+    @context.strokeStyle="gray"
+    @context.rect(0,0,@width,@height);
+    @context.fill();
+    @context.stroke();
+    
+  resize_canvas: ->
+    @canvas.width = @width
+    @canvas.height = @height
+    $("#canvas_container").css("width", @width)
+    
 class @Rectangle extends Parts    
   constructor: (@location,@width,@height) ->
     super()
