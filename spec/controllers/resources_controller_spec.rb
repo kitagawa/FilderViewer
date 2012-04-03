@@ -37,5 +37,13 @@ describe ResourcesController do
       flash[:message].should == "指定されたファイルは既に存在しています。"
       File.delete("tmp/test/rspec_test.json")
     end
+    
+    it "directory not exist" do
+      proc{
+        session[:user] = "_"
+         post :create, :path => fixture_file_upload("/rspec_test.json",'application/json')
+      }.should_not raise_error
+      flash[:message].should == "ディレクトリが見つかりません。"
+    end
   end
 end
