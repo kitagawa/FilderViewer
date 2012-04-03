@@ -1,11 +1,11 @@
 <%@document_title = 'ログイン'%>
-<%=render :partial=>"shared/simple_notice_message"%>
 
 <%=form_tag :action => "login", :method => :post, :class=>"well" do%>
 <div class="hero-unit box" style="width: 320px">
 	<div class="title">
 		<h1>FilderViewer</h1>		
 	</div>
+	<%=render :partial=>"shared/simple_notice_message"%>
 	<%=render :partial=>"shared/simple_error_message"%>
 	<div class="form box">
 		<label><%=attr_name(:user, :name)%></label>

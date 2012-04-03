@@ -25,4 +25,8 @@ module ApplicationHelper
  def li_with_active(path, &block)
    content_tag(:li, {:class => path == request.path ? "active" : ""},&block)
  end
+ 
+ def user_directory
+   return FILE_DIRECTORY + '/' + session[:user]
+ end
 end

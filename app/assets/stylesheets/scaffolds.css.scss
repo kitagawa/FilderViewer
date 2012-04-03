@@ -6,6 +6,9 @@ body {
   line-height: 18px;
   padding-top: 90px; 
   background:-webkit-gradient(linear, 0% 23%, 0% 99%, from(#000000), to(#2A2828)); 
+  background-attachment:fixed;
+  background-repeat : no-repeat;
+  background-position : 0% 100%;
   }
 
 p, ol, ul, td {

@@ -2,12 +2,16 @@
 require 'spec_helper'
 
 describe ResourcesController do
+  before do
+    session[:user] = "test"
+  end
+  
   describe "create" do
     before do
       post :create, :path => fixture_file_upload("/rspec_test.json",'application/json')
     end
     it "upload file" do
-      FileTest.exist?("tmp/rspec_test.json").should be_true
+      FileTest.exist?("tmp/test/rspec_test.json").should be_true
     end
 
     it "return to list" do
@@ -15,7 +19,7 @@ describe ResourcesController do
       flash[:notice].should == "ファイルのアップロードを行いました。"          
     end
     after do
-      File.delete("tmp/rspec_test.json")
+      File.delete("tmp/test/rspec_test.json")
     end
   end
   
@@ -31,7 +35,7 @@ describe ResourcesController do
       post :create, :path => fixture_file_upload("/rspec_test.json",'application/json')
       response.should render_template("new")
       flash[:message].should == "指定されたファイルは既に存在しています。"
-      File.delete("tmp/rspec_test.json")
+      File.delete("tmp/test/rspec_test.json")
     end
   end
 end

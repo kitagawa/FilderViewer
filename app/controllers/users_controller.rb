@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     @without_menu = true
     respond_to do |format|
       if @user.save
+        #アカウントのディレクトリ作成
+        if File::ftype(FILE_DIRECTORY + "/" + @user.name) != "directory"
+          Dir::mkdir(FILE_DIRECTORY + "/" + @user.name)
+        end
         format.html { redirect_to login_index_path, notice: 'ユーザーを作成しました。' }
         format.json { render json: @user, status: :created, location: @user }
       else

@@ -15,22 +15,28 @@ describe UsersController do
   end
 
   describe "POST create" do
-    describe "with valid params" do
       it "creates a new User" do
         expect {
           post :create, :user => valid_attributes
         }.to change(User, :count).by(1)
       end
 
-      it "assigns a newly created user as @user" do
+    describe "with valid params" do
+      before do
         post :create, :user => valid_attributes
+      end
+      
+      it "assigns a newly created user as @user" do
         assigns(:user).should be_a(User)
         assigns(:user).should be_persisted
       end
 
       it "redirects to the created user" do
-        post :create, :user => valid_attributes
         response.should redirect_to(login_index_path)
+      end
+      
+      it "created directory" do
+         File::ftype(FILE_DIRECTORY + "/test/").should == "directory"
       end
     end
 
